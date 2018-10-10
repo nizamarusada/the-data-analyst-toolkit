@@ -1,0 +1,57 @@
+version: "3"
+services:
+  metabase:
+    container_name: dafmetabase
+    image: metabase/metabase:latest
+    ports:
+      - "3000:3000"
+    restart: always
+    networks:
+      - log_net
+    environment:
+      - MB_DB_TYPE=postgres
+      - MB_DB_DBNAME=metabase
+      - MB_DB_PORT=5432
+      - MB_DB_USER=metabase
+      - MB_DB_PASS=metabase
+      - MB_DB_HOST=postgresmetabase
+    depends_on:
+      - pgadmin
+  postgresmetabase:
+    container_name: postgresmetabase
+    image: postgresformetabase:1.0.0
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - log_net
+    volumes:
+      - ~/Documents/local-data/postgres/postgresmetabase:/var/lib/postgresql/data
+  postgresdatabase:
+    container_name: postgresdatabase
+    image: postgresfordatabase:1.0.0
+    ports:
+      - "5435:5432"
+    restart: always
+    networks:
+      - log_net
+    volumes:
+      - ~/Documents/local-data/postgres/postgresdatabase:/var/lib/postgresql/data
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    ports:
+      - "5050:80"
+    restart: always
+    networks:
+      - log_net
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=apakabarnizam@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=2010!
+    volumes:
+      - ~/Documents/local-data/pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgresdatabase
+networks:
+  log_net:
+    driver: bridge
