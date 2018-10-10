@@ -1,0 +1,8 @@
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "create_table" "consumer_complaints.sql" "consumer_complaints"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "create_table" "sacramento_real_estate_transaction.sql" "sacramento_real_estate_transaction"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "create_table" "sales_jan_2009.sql" "sales_jan_2009"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "create_table" "tech_crunch_continental_usa.sql" "tech_crunch_continental_usa"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "initial_ingestion" "ConsumerComplaints.csv" "consumer_complaints"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "initial_ingestion" "Sacramentorealestatetransactions.csv" "sacramento_real_estate_transaction"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "initial_ingestion" "SalesJan2009.csv" "sales_jan_2009"
+python ~/Downloads/git/the-data-analyst-toolkit/python/script/load_csv_to_postgres/initial_load_postgres.py "initial_ingestion" "TechCrunchcontinentalUSA.csv" "tech_crunch_continental_usa"
