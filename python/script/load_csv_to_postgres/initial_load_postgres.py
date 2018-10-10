@@ -17,10 +17,10 @@ DB_TRANSFORM_TABLE  = 'preprocessed_users'
 #command
 def src_file(f):
     if list(f) == list('src') :
-        SRC_DOC = 'TechCrunchcontinentalUSA.csv'
+        SRC_DOC = SRC_DOC
     if list(f) == list('prc') :
         SRC_DOC = 'dataset-medium-preprocess.csv'
-    SRC_LOC = os.path.join('/Users', 'mac', 'Documents','git','data_analyst_kit', 'data_external', 'data_from_chevy', SRC_DOC )
+    SRC_LOC = os.path.join('~/Downloads/git','the-data-analyst-toolkit', 'data_external', 'data_from_chevy', SRC_DOC )
     return SRC_LOC
 
 def db_connection():
@@ -122,11 +122,17 @@ if __name__ == '__main__':
     help_me = '''
       How to run:
         run with methods version:
-            python initial_load_postgres.py "v1|v2|v3"
-            python initial_load_postgres.py "v3"
+            python initial_load_postgres.py "v1|v2|v3" "TechCrunchcontinentalUSA.csv" "tech_crunch_continental_usa"
+            python initial_load_postgres.py "v3" "TechCrunchcontinentalUSA.csv" "tech_crunch_continental_usa"
       '''
     print (help_me)
-    args     = sys.argv[1:]
-    if len(args) > 0:
-        methods = args[0]
+    arg_1     = sys.argv[1:]
+    if len(arg_1) > 0:
+        methods = arg_1[0]
+    arg_2     = sys.argv[2:]
+    if len(arg_2) > 0:
+        SRC_DOC = arg_2[1]
+    arg_3     = sys.argv[3:]
+    if len(arg_3) > 0:
+        DB_INITIAL_TABLE = arg_2[2]
     main(methods)
