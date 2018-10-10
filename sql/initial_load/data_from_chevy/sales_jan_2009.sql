@@ -1,4 +1,4 @@
-drop table sales_jan_2009;
+--drop table sales_jan_2009;
 
 create
 	table
@@ -15,7 +15,7 @@ create
 		last_login varchar(255),
 		latitude varchar(255),
 		longtiude varchar(255) );
-	
-		
-select * from sales_jan_2009;
-select count(*) from sales_jan_2009;
+
+
+--select * from sales_jan_2009;
+--select count(*) from sales_jan_2009;

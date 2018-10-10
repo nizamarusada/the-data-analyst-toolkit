@@ -13,6 +13,6 @@ create
 		raised_amount varchar(255),
 		raised_currency varchar(255),
 		round varchar(255) );
-		
-select * from tech_crunch_continental_usa;
-select count(*) from tech_crunch_continental_usa;
+
+--select * from tech_crunch_continental_usa;
+--select count(*) from tech_crunch_continental_usa;

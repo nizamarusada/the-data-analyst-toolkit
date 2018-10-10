@@ -1,4 +1,4 @@
-drop table consumer_complaints;
+--drop table consumer_complaints;
 
 create
 	table
@@ -21,7 +21,7 @@ create
 		timely_response varchar(255),
 		consumer_disputed varchar(255),
 		complaint_id varchar(255) );
-	
-		
-select * from consumer_complaints;
-select count(*) from consumer_complaints;
+
+
+--select * from consumer_complaints;
+--select count(*) from consumer_complaints;

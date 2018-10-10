@@ -1,4 +1,4 @@
-drop table sacramento_real_estate_transaction;
+--drop table sacramento_real_estate_transaction;
 
 create
 	table
@@ -15,7 +15,7 @@ create
 		price varchar(255),
 		latitude varchar(255),
 		longtiude varchar(255) );
-	
-		
-select * from sacramento_real_estate_transaction;
-select count(*) from sacramento_real_estate_transaction;
+
+
+--select * from sacramento_real_estate_transaction;
+--select count(*) from sacramento_real_estate_transaction;
